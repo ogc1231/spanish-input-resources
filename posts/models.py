@@ -46,6 +46,6 @@ class Post(models.Model):
         return f'{self.id} {self.title}'
 
 
-def create_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(owner=instance)
+# def create_profile(sender, instance, created, **kwargs):
+#     if created:
+#         Profile.objects.create(owner=instance)
