@@ -113,6 +113,7 @@ else:
     ]
 
 CORS_ALLOW_CREDENTIALS = True
+
 JWT_AUTH_SAMESITE = 'None'
 
 ROOT_URLCONF = 'sir_api.urls'
