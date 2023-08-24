@@ -31,8 +31,12 @@ class PostDetailViewTests(APITestCase):
     def setUp(self):
         user1 = User.objects.create_user(username='user1', password='pass1')
         user2 = User.objects.create_user(username='user2', password='pass2')
-        Post.objects.create(owner=user1, title='title 1', content='user1 content')
-        Post.objects.create(owner=user2, title='title 2', content='user2 content')
+        Post.objects.create(
+            owner=user1, title='title 1', content='user1 content'
+            )
+        Post.objects.create(
+            owner=user2, title='title 2', content='user2 content'
+            )
 
     def test_can_retrieve_post_using_valid_id(self):
         response = self.client.get('/posts/1/')
@@ -52,5 +56,7 @@ class PostDetailViewTests(APITestCase):
 
     def test_user_cant_update_other_user_post(self):
         self.client.login(username='user2', password='pass2')
-        response = self.client.put('/posts/1/', {'title': 'title new by user2'})
+        response = self.client.put(
+            '/posts/1/', {'title': 'title new by user2'}
+            )
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
