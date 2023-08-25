@@ -103,7 +103,7 @@ MIDDLEWARE = [
 ]
 
 # CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = [os.environ.get('CLIENT_ORIGIN')]
+CORS_ALLOWED_ORIGINS = [os.environ.get('CLIENT_ORIGIN'), 'localhost']
 
 JWT_AUTH_SAMESITE = 'None'
 
