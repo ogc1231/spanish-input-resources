@@ -10,18 +10,18 @@ export default function NavBar() {
     return (
         <Navbar className={styles.NavBar} collapseOnSelect expand="lg">
       <Container>
-        <NavLink to='/'>
+        <NavLink className={styles.NavLink} to='/'>
             <Navbar.Brand href="#home"><img src={favicon} alt={favicon} height='45'></img>Spanish Input Resources</Navbar.Brand>
         </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto text-left">
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/resources'>Resources</NavLink>
+            <NavLink exact className={styles.NavLink} activeClassName={styles.Active} to='/'><i class="fa-solid fa-house"></i>Home</NavLink>
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to='/resources'><i class="fa-solid fa-podcast"></i>Resources</NavLink>
           </Nav>
           <Nav className="mr-auto text-left">
-            <NavLink to='/signin'>Sign In</NavLink>
-            <NavLink to='/signup'>Sign Up</NavLink>
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to='/signin'><i class="fa-solid fa-right-to-bracket"></i>Sign In</NavLink>
+            <NavLink className={styles.NavLink} activeClassName={styles.Active} to='/signup'><i class="fa-solid fa-user-plus"></i>Sign Up</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
