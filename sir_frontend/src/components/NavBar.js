@@ -3,24 +3,25 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import favicon from '../assets/favicon.png'
+import styles from '../styles/NavBar.module.css'
+import { NavLink } from 'react-router-dom';
 
 export default function NavBar() {
     return (
-        <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+        <Navbar className={styles.NavBar} collapseOnSelect expand="lg">
       <Container>
-        <div>
-            <img src={favicon} alt={favicon} height='45'></img>
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        </div>
+        <NavLink to='/'>
+            <Navbar.Brand href="#home"><img src={favicon} alt={favicon} height='45'></img>Spanish Input Resources</Navbar.Brand>
+        </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto text-left">
-            <Nav.Link href="#features">Home</Nav.Link>
-            <Nav.Link href="#pricing">Resources</Nav.Link>
+            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/resources'>Resources</NavLink>
           </Nav>
           <Nav className="mr-auto text-left">
-            <Nav.Link href="#deets">Sign In</Nav.Link>
-            <Nav.Link href="#memes">Sign Up</Nav.Link>
+            <NavLink to='/signin'>Sign In</NavLink>
+            <NavLink to='/signup'>Sign Up</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
