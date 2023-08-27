@@ -5,4 +5,8 @@
 
  // Setting a baseURL before you reach deployment will cause errors
 
-//  axios.defaults.baseURL = "/api"
+import axios from 'axios'
+
+axios.defaults.baseURL = "https://spanish-input-resources-d088db5e0ebd.herokuapp.com/"
+axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
+axios.defaults.withCredentials = true
