@@ -2,25 +2,29 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import favicon from '../assets/favicon.png'
 
 export default function NavBar() {
     return (
-        <Navbar expand="md" className="bg-body-tertiary" fixed="top">
-            <Container>
-                <Navbar.Brand href="#home">
-                    <img src={favicon} alt={favicon} height={45}></img>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#resources">Resources</Nav.Link>
-                        <Nav.Link href="#signin">Sign In</Nav.Link>
-                        <Nav.Link href="#lsignup">Sign Up</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+        <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Container>
+        <div>
+            <img src={favicon} alt={favicon} height='45'></img>
+            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        </div>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto text-left">
+            <Nav.Link href="#features">Home</Nav.Link>
+            <Nav.Link href="#pricing">Resources</Nav.Link>
+          </Nav>
+          <Nav className="mr-auto text-left">
+            <Nav.Link href="#deets">Sign In</Nav.Link>
+            <Nav.Link href="#memes">Sign Up</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     )
 }
