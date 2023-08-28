@@ -7,6 +7,7 @@
 
 import axios from 'axios'
 
-axios.defaults.baseURL = "https://spanish-input-resources-d088db5e0ebd.herokuapp.com/"
+// axios.defaults.baseURL = "https://spanish-input-resources-d088db5e0ebd.herokuapp.com/"
+axios.defaults.baseURL = "/api"
 axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
 axios.defaults.withCredentials = true
